@@ -1,18 +1,22 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿
 
 namespace AppUbicua
 {
+    using AppUbicua.Views;
+    using Xamarin.Forms;
+
     public partial class App : Application
     {
+        #region Constructors
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
+        #endregion
 
+        #region Methods
         protected override void OnStart()
         {
         }
@@ -24,5 +28,6 @@ namespace AppUbicua
         protected override void OnResume()
         {
         }
+        #endregion
     }
 }
