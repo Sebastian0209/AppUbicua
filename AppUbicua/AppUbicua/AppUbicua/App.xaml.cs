@@ -2,6 +2,7 @@
 
 namespace AppUbicua
 {
+    using AppUbicua.ViewModels;
     using AppUbicua.Views;
     using Xamarin.Forms;
 
@@ -11,8 +12,8 @@ namespace AppUbicua
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage());
+            MainViewModel.GetInstance().Login = new LoginViewModel();
+            this.MainPage = new NavigationPage(new LoginPage());
         }
         #endregion
 
