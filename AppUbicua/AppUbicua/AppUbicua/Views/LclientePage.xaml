@@ -7,10 +7,40 @@
              x:Class="AppUbicua.Views.LclientePage"
              Title="Lista de Clientes">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Clientes"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
+        <StackLayout
+            Padding="8">
+            <ListView
+                HasUnevenRows="True" 
+                ItemsSource="{Binding Clientes}"
+                IsRefreshing="{Binding IsRefreshing}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <StackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Center">
+                                    <Label
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding NombreCli}"
+                               TextColor="Black"/>
+                                    <Label
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding NitCli}"
+                               TextColor="Black"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

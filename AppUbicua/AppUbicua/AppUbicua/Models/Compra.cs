@@ -20,7 +20,7 @@ namespace AppUbicua.Models
         [JsonProperty("fecha")]
         public string FechaC { get; set; }
         [JsonProperty("total")]
-        public double TotalC { get; set; }
+        public string TotalC { get; set; }
 
         public override string ToString()
         {

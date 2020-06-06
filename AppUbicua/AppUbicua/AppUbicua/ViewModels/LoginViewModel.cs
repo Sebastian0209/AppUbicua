@@ -94,7 +94,7 @@
 
             this.Email = string.Empty;
             this.Password = string.Empty;
-
+           
             MainViewModel.GetInstance().Products = new ComprasViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new MasterPage());
 

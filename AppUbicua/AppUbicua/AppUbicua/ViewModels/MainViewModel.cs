@@ -1,10 +1,13 @@
 ﻿
 
 using AppUbicua.Models;
+using AppUbicua.Views;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace AppUbicua.ViewModels
 {
@@ -13,9 +16,20 @@ namespace AppUbicua.ViewModels
         #region ViewModels
         public LoginViewModel Login { get; set; }
         public ComprasViewModel Products { get; set; }
+        public LclienteViewModel Clientes { get; set; }
+
+        public AddProductViewModel Compras { get; set; }
+
+        public AddProductViewModel AddProduct { get; set; }
+
+        public string UserEmail { get; set; }
+        public string UserPassword { get; set; }
+        //public ICommand AddProductCommand { get { return new RelayCommand(this.GoAddProduct); }  }
+
+    
 
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
-
+         
         #endregion
 
         #region Constructors
@@ -26,11 +40,30 @@ namespace AppUbicua.ViewModels
             this.LoadMenus();
         }
 
+       // private async void GoAddProduct()
+        //{
+          //  this.AddProduct = new AddProductViewModel();
+            //await App.Navigator.PushAsync(new AddProductPage());
+
+        //}
+
         private void LoadMenus()
         {
             
             var menus = new List<Menu>
             {
+                new Menu
+                {
+                    Icon="ic_add_shopping_cart",
+                    PageName="AddProductPage",
+                    Title="Add Compra"
+                },
+                new Menu
+                {
+                    Icon="ic_person_add",
+                    PageName="AddClientePage",
+                    Title="Add Cliente"
+                },
                 new Menu
                 {
                     Icon="ic_supervised_user_circle",

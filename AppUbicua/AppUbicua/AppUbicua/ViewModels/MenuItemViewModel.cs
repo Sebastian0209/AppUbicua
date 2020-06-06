@@ -15,6 +15,13 @@ namespace AppUbicua.ViewModels
             var mainViewModel = MainViewModel.GetInstance();
             switch (this.PageName)
             {
+                case "AddProductPage":
+                    await App.Navigator.PushAsync(new AddProductPage());
+                    break;
+                case "AddClientePage":
+                    await App.Navigator.PushAsync(new AddClientePage());
+                    break;
+
                 case "LclientePage":
                     await App.Navigator.PushAsync(new LclientePage());
                     break;
