@@ -18,14 +18,14 @@ namespace AppUbicua.Views
         public LcomprasPage()
         {
             InitializeComponent();
-            GetCompras();
+            GetCompras();   
 
         }
 
         private async void GetCompras()
         {
             HttpClient client = new HttpClient();
-            var response = await client.GetStringAsync("https://fnccosmosdbparcialclientecompra.azurewebsites.net/api/FuncionGetCompra/20");
+            var response = await client.GetStringAsync("https://fnccosmosdbparcialclientecompra.azurewebsites.net/api/FuncionGetCompra/12");
             var compras = JsonConvert.DeserializeObject<List<Compra>>(response);
 
             CompraListView.ItemsSource = compras;

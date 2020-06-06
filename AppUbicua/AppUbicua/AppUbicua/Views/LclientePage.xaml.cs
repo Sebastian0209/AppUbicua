@@ -24,7 +24,7 @@ namespace AppUbicua.Views
         private async void GetCliente()
         {
             HttpClient client = new HttpClient();
-            var response = await client.GetStringAsync("https://fnccosmosdbparcialclientecompra.azurewebsites.net/api/FuncionGetCliente/12");
+            var response = await client.GetStringAsync("https://fnccosmosdbparcialclientecompra.azurewebsites.net/api/FuncionGetCliente/6");
             var compras = JsonConvert.DeserializeObject<List<Cliente>>(response);
 
 

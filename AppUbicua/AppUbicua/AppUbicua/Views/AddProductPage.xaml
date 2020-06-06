@@ -123,6 +123,14 @@
                     TextColor="White"
                     x:Name="BtnDelete">
                 </Button>
+                <Button
+                    BackgroundColor="#0174FF"
+                    BorderRadius="23" 
+                    HeightRequest="46"
+                    Text="Modificar"
+                    TextColor="White"
+                    x:Name="BtnUpdate">
+                </Button>
 
             </StackLayout>
         </ScrollView>

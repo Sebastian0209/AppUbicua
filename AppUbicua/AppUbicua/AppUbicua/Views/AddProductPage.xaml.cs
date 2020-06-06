@@ -20,6 +20,27 @@ namespace AppUbicua.Views
         {
             InitializeComponent();
             BtnSave.Clicked += BtnSave_Clicked;
+            BtnUpdate.Clicked += BtnUpdate_Clicked;
+        }
+
+        private async void BtnUpdate_Clicked(object sender, EventArgs e)
+        {
+            Compra compra = new Compra()
+            {
+                CompraId = EntId.Text,
+                NombreC = EntName.Text,
+            };
+
+            var json = JsonConvert.SerializeObject(compra);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpClient client = new HttpClient();
+            var result = await client.PutAsync(string.Concat("https://fnccosmosdbparcialclientecompra.azurewebsites.net/api/UpdateCompra/9"), content);
+
+            if (result.IsSuccessStatusCode)
+            {
+                await DisplayAlert("Completado", "Compra Modificada", "Aceptar");
+            }
         }
 
         private async void BtnSave_Clicked(object sender, EventArgs e)

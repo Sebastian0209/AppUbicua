@@ -5,19 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Class="AppUbicua.Views.LcomprasPage"
              Title="Lista de Compras">
-    
-    
-       
-                <ListView x:Name="CompraListView">
+
+
+    <StackLayout Padding="8">
+        <ListView x:Name="CompraListView"
+                  HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal"
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout
                                Grid.Column="1"
                                VerticalOptions="Center">
                                 <Label
                                FontAttributes="Bold"
                                FontSize="Medium"
+                               TextDecorations="Underline"
                                Text="{Binding CompraId}"
                                TextColor="Black"/>
                                 <Label 
@@ -39,9 +47,13 @@
                                Text="{Binding TotalC}"
                                TextColor="Black"/>
                             </StackLayout>
-                          </ViewCell>
+                        </Grid>
+                    </ViewCell>
+                            
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-      
+    </StackLayout>
+
+
 </ContentPage>
