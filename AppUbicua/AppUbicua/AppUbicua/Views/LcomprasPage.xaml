@@ -5,11 +5,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Class="AppUbicua.Views.LcomprasPage"
              Title="Lista de Compras">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Lista De Compras"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
-        </StackLayout>
-    </ContentPage.Content>
+    
+    
+       
+                <ListView x:Name="CompraListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                               Grid.Column="1"
+                               VerticalOptions="Center">
+                                <Label
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding CompraId}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding NombreC}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding NitC}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding DescripcionC}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding UbicacionC}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding FechaC}"
+                               TextColor="Black"/>
+                                <Label 
+                               Text="{Binding TotalC}"
+                               TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+      
 </ContentPage>
