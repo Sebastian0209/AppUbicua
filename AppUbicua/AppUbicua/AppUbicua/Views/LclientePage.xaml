@@ -6,41 +6,41 @@
              mc:Ignorable="d"
              x:Class="AppUbicua.Views.LclientePage"
              Title="Lista de Clientes">
-    <ContentPage.Content>
-        <StackLayout
-            Padding="8">
-            <ListView
-                HasUnevenRows="True" 
-                ItemsSource="{Binding Clientes}"
-                IsRefreshing="{Binding IsRefreshing}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                
-                                <StackLayout
-                                    Grid.Column="1"
-                                    VerticalOptions="Center">
-                                    <Label
+  
+    <ListView x:Name="ClientesListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal"
+                               Grid.Column="1"
+                               VerticalOptions="Center">
+                        <Label
                                FontAttributes="Bold"
                                FontSize="Medium"
+                               Text="{Binding ClienteId}"
+                               TextColor="Black"/>
+                        <Label 
                                Text="{Binding NombreCli}"
                                TextColor="Black"/>
-                                    <Label
-                               FontAttributes="Bold"
-                               FontSize="Medium"
+                        <Label 
                                Text="{Binding NitCli}"
                                TextColor="Black"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+                        <Label 
+                               Text="{Binding CorreoCli}"
+                               TextColor="Black"/>
+                        <Label 
+                               Text="{Binding CelularCli}"
+                               TextColor="Black"/>
+                        <Label 
+                               Text="{Binding UbicacionCli}"
+                               TextColor="Black"/>
+                        <Label 
+                               Text="{Binding FechaCli}"
+                               TextColor="Black"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

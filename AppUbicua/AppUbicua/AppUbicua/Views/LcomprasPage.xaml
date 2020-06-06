@@ -12,7 +12,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                         <ViewCell>
-                            <StackLayout
+                            <StackLayout Orientation="Horizontal"
                                Grid.Column="1"
                                VerticalOptions="Center">
                                 <Label
@@ -39,7 +39,7 @@
                                Text="{Binding TotalC}"
                                TextColor="Black"/>
                             </StackLayout>
-                        </ViewCell>
+                          </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
