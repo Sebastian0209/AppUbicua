@@ -6,14 +6,15 @@
              mc:Ignorable="d"
              x:Class="AppUbicua.Views.ComprasPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Compras">
+             Title="Productos">
 
     <ContentPage.Content>
         <StackLayout
             Padding="8">
             <ListView
                 HasUnevenRows="True" 
-                ItemsSource="{Binding Products}">
+                ItemsSource="{Binding Products}"
+                IsRefreshing="{Binding IsRefreshing}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

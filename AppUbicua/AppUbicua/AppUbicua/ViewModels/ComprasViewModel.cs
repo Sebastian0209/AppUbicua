@@ -24,13 +24,19 @@ namespace AppUbicua.ViewModels
             get; 
             set ;
         }
-    
+        private bool isRefreshing;
 
+        public bool IsRefreshing
+        {
+            get { return this.isRefreshing; }
+            set { SetValue(ref this.isRefreshing, value); }
+        }
         #endregion
 
         #region Contructors
         public ComprasViewModel()
         {
+            isRefreshing = true;
             Products = new ObservableCollection<Product>
             {
             new Product
@@ -58,9 +64,19 @@ namespace AppUbicua.ViewModels
                 HasOffer = false
 
             },
-            
+            new Product
+            {
+                Name = "Ipad Pro",
+                Price = 1099.0m,
+                Image= "ipad.png",
+                HasOffer = true,
+                OfferPrice = 990.99m
+
+            },
+
             };
-            
+            isRefreshing = false;
+
         }
     
 

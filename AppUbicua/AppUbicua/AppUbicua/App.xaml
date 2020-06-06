@@ -9,6 +9,8 @@
     x:Class="AppUbicua.App">
     <Application.Resources>
         <ResourceDictionary>
+            
+            
             <infra:InstanceLocator x:Key="Locator"/>
         </ResourceDictionary>
 

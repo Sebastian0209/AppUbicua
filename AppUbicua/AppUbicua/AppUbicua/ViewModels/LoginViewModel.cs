@@ -96,10 +96,10 @@
             this.Password = string.Empty;
 
             MainViewModel.GetInstance().Products = new ComprasViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new ComprasPage());
+            await Application.Current.MainPage.Navigation.PushAsync(new MasterPage());
 
            
-
+             
         }
         #endregion
     }
